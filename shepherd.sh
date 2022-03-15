@@ -46,5 +46,5 @@ fi
 
 let "CSHARE = $NCORES * 1024"
 
-#exec ${SGE_ROOT}/bin/linux-x64/sge_shepherd $@
+
 exec systemd-run --unit=sge-shepherd-$JOB_ID-$TASK_ID --scope  --slice=sge-shepherd-$JOB_ID-$TASK_ID -p MemoryLimit=${MEMS}G -p CPUShares=${CSHARE} ${SGE_ROOT}/bin/linux-x64/sge_shepherd $@
