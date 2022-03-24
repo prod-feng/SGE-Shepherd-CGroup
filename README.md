@@ -1,7 +1,7 @@
 # SGE-Shepherd-CGroup
 Bash Script for Shepherd  Dameon to set CGroup rule to control job's RAM and CPU usage
 
-CentOS 7. Sun Grid Engine 2011.1101.
+CentOS 7. Sun Grid Engine 2011.11p1.
 
 Change the global SGE configuration to set the "shepherd_cmd" parameter:
 
