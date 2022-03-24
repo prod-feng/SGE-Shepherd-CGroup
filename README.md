@@ -26,7 +26,6 @@ Like this:
 │ │   ├─ 8240 systemd-cgls
 
 │ │   ├─ 8241 less
-
 │ │   ├─25803 sshd: feng [priv]
 
 To avoid this, you can comment the following line in /etc/pam.d/password-auth, on all the compute nodes.
