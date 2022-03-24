@@ -13,9 +13,10 @@ shepherd_cmd                 /scratch/apps/sge/util/shepherd.sh
 
 ...
 
-For the parallel jobs like MPI,if you use ssh as the rsh, rlogin, the ststemd-logind service will move the spawned child process on the remote node to a user session CGroup, out of the shepherd scope, which void the cgoup rule applied from the shepher command.
+For the parallel jobs like MPI,if you use ssh as the rsh, rlogin daemon/command, the ststemd-logind service will move the spawned child process on the remote nodes to a user session slice, out of the defined shepherd scope, which then void the cgoup rule applied from the shepher command.
 
 To avoid this, you can comment the following line in /etc/pam.d/password-auth, on all the compute nodes.
 
 #-session     optional      pam_systemd.so
 
+and then restart the sshd service.
