@@ -46,3 +46,18 @@ The CGroup structure defined by the shepherd command looks like:
 │   │     ├─11881 mpirun -np 4 ....
 ```
 
+On the working node, you can check the status and rules applied to the job:
+
+```text
+$ systemctl status sge-shepherd-396548-0.scope
+● sge-shepherd-396548-0.scope - /scratch/apps/sge/current/bin/linux-x64/sge_shepherd
+   Loaded: loaded (/run/systemd/system/sge-shepherd-396548-0.scope; static; vendor preset: disabled)
+  Drop-In: /run/systemd/system/sge-shepherd-396548-0.scope.d
+           └─50-CPUShares.conf, 50-Description.conf, 50-MemoryLimit.conf, 50-Slice.conf
+   Active: active (running) since Thu 2022-03-24 05:20:05 EDT; 10h ago
+   Memory: 167.8M (limit: 8.0G)
+   CGroup: /sge.slice/sge-shepherd.slice/sge-shepherd-396548.slice/sge-shepherd-396548-0.slice/sge-shepherd-396548-0.scope
+           ├─11775 /scratch/apps/sge/current/bin/linux-x64/sge_shepherd
+           ├─11798 -bash /scratch/apps/sge/var/spool/node057/job_scripts/396548
+           ├─11881 mpirun -np 4 ....
+```
