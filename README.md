@@ -26,11 +26,11 @@ Like this:
 │ │   ├─25803 sshd: feng [priv]
 ```
 
-To avoid this, you can comment the following line in /etc/pam.d/password-auth, on all the compute nodes.
+>To avoid this, you can comment the following line in /etc/pam.d/password-auth, on all the compute nodes.
 
-#-session     optional      pam_systemd.so
+>>#-session     optional      pam_systemd.so
 
-and then restart the sshd service.
+>>and then restart the sshd service.
 
 The CGroup structure defined by the shepherd command looks like:
 
