@@ -18,10 +18,15 @@ For the parallel jobs like MPI,if you use ssh as the rsh, rlogin daemon/command,
 Like this:
 
 ├─user.slice
+
 │ ├─user-1008.slice
+
 │ │ └─session-1265189.scope
+
 │ │   ├─ 8240 systemd-cgls
+
 │ │   ├─ 8241 less
+
 │ │   ├─25803 sshd: feng [priv]
 
 To avoid this, you can comment the following line in /etc/pam.d/password-auth, on all the compute nodes.
